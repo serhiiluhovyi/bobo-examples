@@ -1,0 +1,6 @@
+HOMEWORK #4
+Optional part:
+  1. Implement a reverse method for the linked list
+    - take a screenshot of your impl
+    - post it as a response to this message
+  2. Implement a Binary-Search Tree

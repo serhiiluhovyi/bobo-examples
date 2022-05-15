@@ -1,0 +1,104 @@
+HOMEWORK #4
+Required part:
+1. Implement a key-value Hash Table.
+   - Publish your solution to the GitHub
+   - Post a link to your repo as a response to this message
+
+See here for more details:
+====================
+Hash Table for the poor
+Given class Node, implement a Hash Table according to the description in Java docs.
+Have fun!
+Inside java-fundamentals-course repo, you can run the following demo to check your solution:
+
+public class DemoApp {
+    public static void main(String[] args) {
+        var accounts = Accounts.generateAccountList(10);
+        var emailToBirthdayTable = new HashTable<String, LocalDate>();
+        accounts.forEach(a -> emailToBirthdayTable.put(a.getEmail(), a.getBirthday()));
+        emailToBirthdayTable.printTable();
+    }
+}
+
+As a result, you should see something like this:
+0: abigailferguson@mail.com:1989-05-19 -> faith.myers@yahoo.com:1950-01-22
+1: sofia.riley@mail.com:2007-01-02
+2: nguyen@gmail.com:1961-03-18 -> clemons@mail.com:1967-03-24
+3:
+4: ferrell@mail.com:1989-03-12
+5:
+6: pope@mail.com:1930-12-28
+7:
+8:
+9: lamb@gmail.com:2014-12-16 -> samantha.baker@gmail.com:2001-04-03
+10:
+11:
+12:
+13:
+14: stokes@yahoo.com:1965-01-01
+15:
+====================
+
+package com.bobocode;
+
+/**
+ * A generic class Node that supports two type params: one for the key and one for the value.
+ *
+ * @param <K> key type parameter
+ * @param <V> value type parameter
+ */
+public class Node<K, V> {
+    K key;
+    V value;
+    Node<K, V> next;
+
+    public Node(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+}
+====================
+
+package com.bobocode;
+
+/**
+ * A simple implementation of the Hash Table that allows storing a generic key-value pair. The table itself is based
+ * on the array of {@link Node} objects.
+ * <p>
+ * An initial array capacity is 16.
+ * <p>
+ * Every time a number of elements is equal to the array size that tables gets resized
+ * (it gets replaced with a new array that it twice bigger than before). E.g. resize operation will replace array
+ * of size 16 with a new array of size 32. PLEASE NOTE that all elements should be reinserted to the new table to make
+ * sure that they are still accessible  from the outside by the same key.
+ *
+ * @param <K> key type parameter
+ * @param <V> value type parameter
+ */
+public class HashTable<K, V> {
+
+    /**
+     * Puts a new element to the table by its key. If there is an existing element by such key then it gets replaced
+     * with a new one, and the old value is returned from the method. If there is no such key then it gets added and
+     * null value is returned.
+     *
+     * @param key   element key
+     * @param value element value
+     * @return old value or null
+     */
+    public V put(K key, V value) {
+        throw new UnsupportedOperationException("You should implement a method that throws this exception");
+    }
+
+    /**
+     * Prints a content of the underlying table (array) according to the following format:
+     * 0: key1:value1 -> key2:value2
+     * 1:
+     * 2: key3:value3
+     * ...
+     */
+    public void printTable() {
+        throw new UnsupportedOperationException("You should implement a method that throws this exception");
+    }
+}
+
